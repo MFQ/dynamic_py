@@ -38,7 +38,7 @@ class DataClass:
         :param result:
         :return: object
         """
-        attrs = self.filter_attributes
+        attrs = self.filter_attributes()
 
         for attribute in attrs:
             if type(self.__getattribute__(attribute)) != type(self):
