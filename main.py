@@ -24,6 +24,8 @@ if __name__ == '__main__':
     my_inst_1 = DataClass.from_dict(d)
     print("Converting it back to dict from data class", my_inst_1.to_dict())
 
-    # print_hi('PyCharm')
+    my_inst_2 = DataClass(a=1, b=2, c={"b": 1, "k": 3})
+
+    print('print instance 2: %s', my_inst_2.to_dict())
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

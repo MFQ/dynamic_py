@@ -3,6 +3,16 @@ from dataclasses import dataclass
 
 @dataclass
 class DataClass:
+    def __init__(self, **kwargs):
+        """
+        This function will create a data class right from arbitrary attributes
+        :param kwargs:
+        """
+        for key in kwargs.keys():
+            if type(kwargs.get(key)) != dict:
+                self.__setattr__(key, kwargs.get(key))
+            else:
+                self.__setattr__(key, DataClass(**kwargs.get(key)))
     @classmethod
     def from_dict(cls, input_dict: dict):
         """
